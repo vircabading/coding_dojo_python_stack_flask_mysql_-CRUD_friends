@@ -38,7 +38,17 @@
         </p>
         <hr>
       {% endfor %}
-    </div>    
+      <h1>Add a Friend</h1>
+      <form action="/create_friend" method="POST">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname">
+        <label for="occ" >Occupation:</label>
+        <input type="text" name="occ">
+        <input type="submit" value="Add Friend">
+      </form> 
+    </div>
   </main>
 </body>
 </html>

@@ -16,15 +16,19 @@ def index():
 
     return render_template("index.html", all_friends = all_friends)
 
-
-    # if request.form['number_guess'] != "":
-    #     session['number_guess'] = int(request.form['number_guess'])
-    #     session['input_error'] = 0
-    # else:
-    #     session['number_guess'] = 50
-    #     session['input_error'] = 1
-    print("Got number guess of:", session['number_guess'], "from form post :: Message:", session['message'])
-    return redirect("/")
+@app.route('/create_friend', methods=["POST"])
+def create_friend():
+    # First we make a data dictionary from our request.form coming from our template.
+    # The keys in data need to line up exactly with the variables in our query string.
+    data = {
+        "first_name": request.form["fname"],
+        "last_name" : request.form["lname"],
+        "occupation" : request.form["occ"]
+    }
+    # We pass the data dictionary into the save method from the Friend class.
+    Friend.save(data)
+    # Don't forget to redirect after saving to the database.
+    return redirect('/')
 
 # @app.route('/increment_by', methods=['POST'])
 # def increment_by():
