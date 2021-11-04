@@ -16,7 +16,7 @@
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
 
-          <strong>First Flask Friends</strong>
+          <strong>Friends</strong>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,6 +31,13 @@
       <h1>
         These are my friends
       </h1>
+      {% for one_friend in all_friends %}
+        <p>
+          ::: First Name: {{one_friend.first_name}} :: Last Name: {{one_friend.last_name}}
+          ::: Occupation: {{one_friend.occupation}} :::
+        </p>
+        <hr>
+      {% endfor %}
     </div>    
   </main>
 </body>

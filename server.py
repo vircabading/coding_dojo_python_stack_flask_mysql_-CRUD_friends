@@ -11,10 +11,10 @@ def index():
     all_friends = Friend.get_all()
     print(all_friends)
 
-    for idx in range(len(all_friends)):
-        print(all_friends[idx].first_name,all_friends[idx].last_name, all_friends[idx].occupation)
+    # for idx in range(len(all_friends)):
+    #     print(all_friends[idx].first_name,all_friends[idx].last_name, all_friends[idx].occupation)
 
-    return render_template("index.html")
+    return render_template("index.html", all_friends = all_friends)
 
 
     # if request.form['number_guess'] != "":
